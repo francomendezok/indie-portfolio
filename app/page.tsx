@@ -8,6 +8,7 @@ const projects = [
     revenue: "$19/mo",
     logo: "/interioresai-logo.png",
     link: "https://interiores-ai.com",
+    internalLink: "/interioresai",
     badge: (
       <a href="https://trustmrr.com/startup/interiores-ai" target="_blank">
         <img src="https://trustmrr.com/api/embed/interiores-ai?format=svg" alt="TrustMRR verified revenue badge" width="220" height="90" />
@@ -18,7 +19,8 @@ const projects = [
     name: "Mirror Look App",
     description: "Virtual try-on for Shopify stores.",
     logo: "/mirrorlook-logo.png",
-    link: "https://mirrorlook.app"
+    link: "https://mirrorlook.app",
+    internalLink: "/mirrorlook"
   }
 ];
 

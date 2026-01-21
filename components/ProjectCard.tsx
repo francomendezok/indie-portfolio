@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 interface ProjectProps {
@@ -7,11 +8,13 @@ interface ProjectProps {
     revenue?: string;
     logo: string;
     link: string;
+
+    internalLink?: string;
     color?: string; // Optional now if we use original images
     badge?: ReactNode;
 }
 
-export const ProjectCard = ({ name, description, revenue, logo, link, color = "#000", badge }: ProjectProps) => {
+export const ProjectCard = ({ name, description, revenue, logo, link, internalLink, color = "#000", badge }: ProjectProps) => {
     const isImageLogo = logo.includes(".") || logo.startsWith("/");
 
     return (
@@ -40,6 +43,14 @@ export const ProjectCard = ({ name, description, revenue, logo, link, color = "#
                 </div>
 
                 <p className="text-gray-500 text-sm mb-6 flex-grow">{description}</p>
+
+                {internalLink && (
+                    <div className="mb-4 relative z-20 pointer-events-auto">
+                        <Link href={internalLink} className="text-sm font-medium text-gray-900 hover:text-black underline">
+                            View details
+                        </Link>
+                    </div>
+                )}
 
                 {badge && (
                     <div className="mt-auto pt-4 relative z-20 pointer-events-auto">
