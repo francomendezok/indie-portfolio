@@ -5,26 +5,12 @@ const projects = [
   {
     name: "Interiores AI",
     description: "Redesign your interior with AI in seconds.",
-    revenue: "$19/mo",
     image: "/interioresai1.webp",
     logo: "/interioresai-logo.png",
     link: "https://interiores-ai.com",
     internalLink: "/interioresai",
     tag: "SaaS · AI",
-    badge: (
-      <a
-        href="https://trustmrr.com/startup/interiores-ai"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://trustmrr.com/api/embed/interiores-ai?format=svg"
-          alt="TrustMRR verified revenue badge"
-          width={160}
-          height={65}
-        />
-      </a>
-    ),
+    sold: true,
   },
   {
     name: "Mirror Look App",
@@ -208,9 +194,9 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0 ml-4">
-                    {project.revenue && (
-                      <span className="text-xs font-bold text-white bg-indigo-600 px-2 py-1 rounded">
-                        {project.revenue}
+                    {project.sold && (
+                      <span className="text-xs font-bold text-white bg-red-600 px-2 py-1 rounded uppercase tracking-wide">
+                        Sold
                       </span>
                     )}
                     <span className="text-white/30 text-xs border border-white/10 px-2 py-1 rounded whitespace-nowrap">
@@ -219,16 +205,13 @@ export default function Home() {
                   </div>
                 </div>
               </a>
-              <div className="px-5 pb-5 flex items-center justify-between">
+              <div className="px-5 pb-5">
                 <Link
                   href={project.internalLink!}
                   className="text-white/30 text-xs hover:text-white/70 transition-colors"
                 >
                   View case study →
                 </Link>
-                {project.badge && (
-                  <div className="relative z-10">{project.badge}</div>
-                )}
               </div>
             </div>
           ))}
@@ -286,9 +269,22 @@ export default function Home() {
           </a>
         </div>
         <hr className="my-8 border-gray-200" />
-        <div>
-          <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Email</p>
-          <p className="text-sm text-gray-900">francomendezok@gmail.com</p>
+        <div className="flex gap-12">
+          <div>
+            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Email</p>
+            <p className="text-sm text-gray-900">francomendezok@gmail.com</p>
+          </div>
+          <div>
+            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">WhatsApp</p>
+            <a
+              href="https://wa.me/5493513930405"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-900 hover:opacity-60 transition-opacity"
+            >
+              +549 351 393 0405
+            </a>
+          </div>
         </div>
       </section>
 
