@@ -11,8 +11,8 @@ export function MainNavbar({ linkPrefix = "" }: MainNavbarProps) {
   const { locale, setLocale, t } = useLanguage();
 
   return (
-    <nav className="relative z-20 px-5 pt-5 md:px-16 md:pt-6">
-      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-white px-5 py-3 text-black shadow-xl md:px-6">
+    <nav className="relative z-20 px-4 pt-4 md:px-16 md:pt-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-white px-4 py-2.5 text-black shadow-xl md:px-6 md:py-3">
         <Link href="/" className="text-sm font-medium tracking-wide text-black">
           {t("nav.brand")}
         </Link>

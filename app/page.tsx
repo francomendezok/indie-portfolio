@@ -1,48 +1,214 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/i18n/LanguageContext";
 import { MainNavbar } from "@/components/MainNavbar";
 
 const skills = [
-  { name: "React / Next.js", icon: "⚛" },
-  { name: "TypeScript", icon: "Ts" },
-  { name: "Tailwind CSS", icon: "✦" },
-  { name: "Supabase", icon: "◈" },
-  { name: "PostgreSQL", icon: "◉" },
-  { name: "AI / LLMs", icon: "◎" },
-  { name: "Figma", icon: "▣" },
-  { name: "Vercel", icon: "▲" },
-  { name: "Node.js", icon: "⬡" },
-  { name: "REST APIs", icon: "⊕" },
-  { name: "Git / GitHub", icon: "⑂" },
-  { name: "Stripe", icon: "◇" },
+  {
+    name: "React",
+    icon: "RC",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/React.svg"],
+  },
+  {
+    name: "Next.js",
+    icon: "NX",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Next.js.svg"],
+  },
+  {
+    name: "TypeScript",
+    icon: "TS",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/TypeScript.svg"],
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "TW",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg"],
+  },
+  {
+    name: "JavaScript",
+    icon: "JS",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/JavaScript.svg"],
+  },
+  {
+    name: "PostgreSQL",
+    icon: "PG",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/PostgresSQL.svg"],
+  },
+  {
+    name: "SQL Server",
+    icon: "MS",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Microsoft-SQL-Server.svg"],
+  },
+  { name: "AI / LLMs", icon: "AI" },
+  {
+    name: "Figma",
+    icon: "FG",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Figma.svg"],
+  },
+  {
+    name: "Vercel",
+    icon: "VC",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Vercel.svg"],
+  },
+  {
+    name: "Node.js",
+    icon: "ND",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Node.js.svg"],
+  },
+  {
+    name: "Express",
+    icon: "EX",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Express.svg"],
+  },
+  {
+    name: "PHP",
+    icon: "PHP",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/PHP.svg"],
+  },
+  {
+    name: "C#",
+    icon: "C#",
+    iconUrls: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"],
+  },
+  {
+    name: "REST APIs",
+    icon: "API",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/OpenAPI.svg"],
+  },
+  {
+    name: "Git",
+    icon: "GT",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Git.svg"],
+  },
+  {
+    name: "GitHub",
+    icon: "GH",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/GitHub.svg"],
+  },
+  {
+    name: "Postman",
+    icon: "PM",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Postman.svg"],
+  },
+  {
+    name: "Redis",
+    icon: "RD",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Redis.svg"],
+  },
+  {
+    name: "Redux",
+    icon: "RX",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Redux.svg"],
+  },
+  {
+    name: "SQLite",
+    icon: "SQ",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/SQLite.svg"],
+  },
+  {
+    name: "Vite.js",
+    icon: "VT",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Vite.js.svg"],
+  },
+  {
+    name: "Webpack",
+    icon: "WP",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Webpack.svg"],
+  },
+  {
+    name: "Bash",
+    icon: "SH",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Bash.svg"],
+  },
+  {
+    name: "Linux",
+    icon: "LX",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/Linux.svg"],
+  },
+  { name: "Shopify", icon: "SY" },
+  { name: "Tiendanube", icon: "TN" },
+  { name: "Wix", icon: "WX" },
+  {
+    name: "WooCommerce",
+    icon: "WC",
+    iconUrls: ["https://icon.icepanel.io/Technology/svg/WooCommerce.svg"],
+  },
+  { name: "React Native", icon: "RN" },
 ];
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const projects = [
+    {
+      name: "Autogestion CMPC",
+      description: t("projects.autogestioncmpc.description"),
+      logo: "/cmpc-logo.webp",
+      link: "https://autogestion.cmpc.org.ar/",
+      tag: t("projects.autogestioncmpc.tag"),
+      logoClassName: "rounded-2xl bg-white p-2 object-contain",
+      banner: "/Autogestion CMPC/1.png",
+      gallery: [
+        "/Autogestion CMPC/2.png",
+        "/Autogestion CMPC/3.png",
+        "/Autogestion CMPC/4.png",
+        "/Autogestion CMPC/5.png",
+      ],
+    },
+    {
+      name: "MirrorLook AI Virtual Try-On",
+      description: t("projects.mirrorlook.description"),
+      logo: "/mirrorlook-logo.webp",
+      link: "https://mirrorlook.app",
+      tag: t("projects.mirrorlook.tag"),
+      logoClassName: "rounded-2xl object-contain",
+      banner: "/mirrorlook.png",
+      featuredImage: "/mirrorlook.png",
+      gallery: ["/1.webp", "/2.webp", "/3.webp", "/4.webp", "/5.webp", "/6.webp"],
+    },
     {
       name: "Interiores AI",
       description: t("projects.interioresai.description"),
-      image: "/interioresai1.webp",
       logo: "/interioresai-logo.png",
       link: "https://interiores-ai.com",
-      internalLink: "/interioresai",
       tag: t("projects.interioresai.tag"),
       sold: true,
-    },
-    {
-      name: "Mirror Look App",
-      description: t("projects.mirrorlook.description"),
-      image: "/mirrorlook1.jpg",
-      logo: "/mirrorlook-logo.png",
-      link: "https://mirrorlook.app",
-      internalLink: "/mirrorlook",
-      tag: t("projects.mirrorlook.tag"),
+      banner: "/interiores-ai-banenr.png",
+      video: "/interiores-ai-video.mp4",
+      logoClassName: "rounded-2xl object-cover",
+      featuredImage: "/interiores-ai-1.png",
+      gallery: [
+        "/interioresai1.webp",
+        "/interioresai2.webp",
+        "/interioresai3.webp",
+        "/interioresai4.webp",
+        "/interioresai5.webp",
+        "/interioresai6.webp",
+      ],
     },
   ];
+  const [carouselIndexes, setCarouselIndexes] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCarouselIndexes((current) => {
+        const next = { ...current };
+
+        for (const project of projects) {
+          if (project.featuredImage) continue;
+          const slides = [project.banner, ...project.gallery];
+          if (!slides.length) continue;
+          const currentIndex = current[project.name] ?? 0;
+          next[project.name] = (currentIndex + 1) % slides.length;
+        }
+
+        return next;
+      });
+    }, 7000);
+
+    return () => window.clearInterval(interval);
+  }, [locale]);
 
   return (
     <div className="overflow-x-hidden font-sans">
@@ -51,8 +217,8 @@ export default function Home() {
         {/* Nav */}
         <MainNavbar />
 
-        {/* Person photo — right half */}
-        <div className="absolute right-0 top-0 w-[55%] h-full">
+        {/* Person photo — full width on mobile, right half on desktop */}
+        <div className="absolute right-0 top-0 w-full md:w-[55%] h-full">
           <Image
             src="/me.webp"
             alt="Franco Mendez"
@@ -61,22 +227,23 @@ export default function Home() {
             className="object-cover object-top"
             priority
           />
-          {/* Fade into dark bg */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#0d0d0d]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/80 via-transparent to-transparent" />
+          {/* Fade from left — desktop only */}
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-[#0d0d0d]/50 to-transparent" />
+          {/* Fade from bottom — stronger on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/70 to-[#0d0d0d]/30 md:from-[#0d0d0d]/80 md:via-transparent md:to-transparent" />
         </div>
 
         {/* Oversized heading — bottom of hero */}
-        <div className="relative z-10 flex flex-col justify-end h-[calc(100vh-80px)] pb-14 px-8 md:px-16">
+        <div className="relative z-10 flex flex-col justify-end h-[calc(100vh-70px)] md:h-[calc(100vh-80px)] pb-10 md:pb-14 px-6 md:px-16">
           <h1
-            className="font-black text-white leading-[0.88] tracking-tight whitespace-nowrap"
-            style={{ fontSize: "clamp(52px, 10.5vw, 148px)" }}
+            className="font-black text-white leading-[0.88] tracking-tight md:whitespace-nowrap"
+            style={{ fontSize: "clamp(42px, 10.5vw, 148px)" }}
           >
             {t("hero.title1")}
           </h1>
           <h1
-            className="font-black text-white leading-[0.88] tracking-tight whitespace-nowrap"
-            style={{ fontSize: "clamp(52px, 10.5vw, 148px)" }}
+            className="font-black text-white leading-[0.88] tracking-tight md:whitespace-nowrap"
+            style={{ fontSize: "clamp(42px, 10.5vw, 148px)" }}
           >
             {t("hero.title2")}
           </h1>
@@ -84,7 +251,7 @@ export default function Home() {
       </section>
 
       {/* ─── BIO ─── */}
-      <section className="bg-white px-8 md:px-16 py-16 md:py-20">
+      <section className="bg-white px-6 md:px-16 py-14 md:py-20">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-20 items-start">
           <div>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -130,90 +297,228 @@ export default function Home() {
       </section>
 
       {/* ─── PROJECTS ─── */}
-      <section id="work" className="bg-white px-8 md:px-16 pb-20">
+      <section id="work" className="bg-white px-6 md:px-16 pb-16 md:pb-20">
         <h2
           className="font-black text-black leading-none mb-10"
           style={{ fontSize: "clamp(40px, 7.5vw, 96px)" }}
         >
           {t("projects.title")}
         </h2>
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="space-y-8">
           {projects.map((project) => (
-            <div
+            <article
               key={project.name}
-              className="bg-[#111] rounded-2xl overflow-hidden group"
+              className="rounded-[28px] border border-black/8 bg-[#111] p-4 md:p-6"
             >
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
+              <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  <div className="flex items-center gap-4">
                     <Image
                       src={project.logo}
                       alt=""
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 rounded-lg object-cover flex-shrink-0"
+                      width={56}
+                      height={56}
+                      className={`h-14 w-14 flex-shrink-0 ${project.logoClassName}`}
                     />
                     <div>
-                      <p className="text-white font-semibold text-sm leading-tight">
-                        {project.name}
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-xl font-semibold text-white">{project.name}</h3>
+                        {project.sold && (
+                          <span className="rounded-full bg-red-600 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+                            {t("projects.sold")}
+                          </span>
+                        )}
+                      </div>
+                      <p className="mt-1 max-w-2xl text-sm text-white/60">
+                        {project.description}
                       </p>
-                      <p className="text-white/40 text-xs mt-0.5">{project.description}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 flex-shrink-0 ml-4">
-                    {project.sold && (
-                      <span className="text-xs font-bold text-white bg-red-600 px-2 py-1 rounded uppercase tracking-wide">
-                        {t("projects.sold")}
-                      </span>
-                    )}
-                    <span className="text-white/30 text-xs border border-white/10 px-2 py-1 rounded whitespace-nowrap">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/70">
                       {project.tag}
                     </span>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition-opacity hover:opacity-80"
+                    >
+                      {t("projects.liveSite")}
+                    </a>
                   </div>
                 </div>
-              </a>
-              <div className="px-5 pb-5">
-                <Link
-                  href={project.internalLink!}
-                  className="text-white/30 text-xs hover:text-white/70 transition-colors"
-                >
-                  {t("projects.viewCaseStudy")}
-                </Link>
+
+                {project.video && (
+                  <div className="overflow-hidden md:rounded-3xl border border-white/10 bg-black">
+                    <video
+                      className="block h-auto w-full"
+                      controls
+                      preload="metadata"
+                      playsInline
+                      autoPlay={false}
+                    >
+                      <source src={project.video} type="video/mp4" />
+                    </video>
+                  </div>
+                )}
+
+                <div>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+                    {t("projects.gallery")}
+                  </p>
+                  {project.featuredImage ? (
+                    <div className="space-y-4">
+                      <div className="overflow-hidden md:rounded-3xl border border-white/10 bg-black/30">
+                        <Image
+                          src={project.featuredImage}
+                          alt={`${project.name} featured`}
+                          width={1800}
+                          height={1200}
+                          sizes="100vw"
+                          className="h-auto w-full object-cover"
+                        />
+                      </div>
+                      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                        {project.gallery.map((image, index) => (
+                          <div
+                            key={`${project.name}-${image}`}
+                            className="overflow-hidden md:rounded-2xl border border-white/10 bg-black/30"
+                          >
+                            <Image
+                              src={image}
+                              alt={`${project.name} ${index + 1}`}
+                              width={1200}
+                              height={900}
+                              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-center justify-center gap-3">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setCarouselIndexes((current) => {
+                              const slides = [project.banner, ...project.gallery];
+                              const activeIndex = current[project.name] ?? 0;
+                              const nextIndex =
+                                activeIndex === 0 ? slides.length - 1 : activeIndex - 1;
+
+                              return {
+                                ...current,
+                                [project.name]: nextIndex,
+                              };
+                            })
+                          }
+                          className="cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/70 transition-colors hover:border-white/30 hover:text-white"
+                        >
+                          Prev
+                        </button>
+                        <div className="w-full overflow-hidden md:rounded-3xl border border-white/10 bg-black/30">
+                          <div
+                            className="flex h-full transition-transform duration-700 ease-out"
+                            style={{
+                              transform: `translateX(-${
+                                (carouselIndexes[project.name] ?? 0) * 100
+                              }%)`,
+                            }}
+                          >
+                            {[project.banner, ...project.gallery].map((image, index) => (
+                              <div
+                                key={`${project.name}-${image}`}
+                                className="w-full flex-shrink-0"
+                              >
+                                <Image
+                                  src={image}
+                                  alt={`${project.name} ${index + 1}`}
+                                  width={1600}
+                                  height={1200}
+                                  sizes="100vw"
+                                  className="h-auto w-full object-cover"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setCarouselIndexes((current) => {
+                              const slides = [project.banner, ...project.gallery];
+                              const activeIndex = current[project.name] ?? 0;
+                              const nextIndex = (activeIndex + 1) % slides.length;
+
+                              return {
+                                ...current,
+                                [project.name]: nextIndex,
+                              };
+                            })
+                          }
+                          className="cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/70 transition-colors hover:border-white/30 hover:text-white"
+                        >
+                          Next
+                        </button>
+                      </div>
+                      <div className="mt-3 flex items-center justify-center gap-2">
+                        {[project.banner, ...project.gallery].map((_, index) => (
+                          <button
+                            key={`${project.name}-dot-${index}`}
+                            type="button"
+                            aria-label={`Show ${project.name} image ${index + 1}`}
+                            onClick={() =>
+                              setCarouselIndexes((current) => ({
+                                ...current,
+                                [project.name]: index,
+                              }))
+                            }
+                            className={`h-2 rounded-full transition-all ${
+                              (carouselIndexes[project.name] ?? 0) === index
+                                ? "w-8 bg-white"
+                                : "w-2 bg-white/25"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
       {/* ─── SKILLS ─── */}
-      <section id="skills" className="bg-[#111] px-8 md:px-16 py-20">
+      <section id="skills" className="bg-[#111] px-6 md:px-16 py-16 md:py-20">
         <h2 className="text-white font-bold leading-tight mb-3" style={{ fontSize: "clamp(28px, 4vw, 48px)" }}>
           {t("skills.title")}
         </h2>
-        <div className="flex gap-1.5 mb-12">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full ${i === 0 ? "bg-white" : "bg-white/20"}`}
-            />
-          ))}
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
           {skills.map((skill) => (
             <div
               key={skill.name}
               className="bg-[#1a1a1a] rounded-xl p-5 flex flex-col gap-3 hover:bg-[#222] transition-colors"
             >
-              <span className="text-white/50 text-lg font-mono leading-none">{skill.icon}</span>
+              <div className="flex min-h-8 items-center gap-2">
+                {skill.iconUrls?.length ? (
+                  skill.iconUrls.map((iconUrl) => (
+                    <img
+                      key={iconUrl}
+                      src={iconUrl}
+                      alt=""
+                      loading="lazy"
+                      className="h-7 w-7 object-contain"
+                    />
+                  ))
+                ) : (
+                  <span className="text-white/50 text-lg font-mono leading-none">{skill.icon}</span>
+                )}
+              </div>
               <span className="text-white text-sm font-medium">{skill.name}</span>
             </div>
           ))}
@@ -221,11 +526,8 @@ export default function Home() {
       </section>
 
       {/* ─── CONTACT ─── */}
-      <section id="contact" className="bg-white px-8 md:px-16 py-20">
-        <p className="text-gray-400 text-sm font-medium mb-4 tracking-wide">
-          {t("contact.eyebrow")}
-        </p>
-        <div className="flex items-start justify-between gap-8">
+      <section id="contact" className="bg-white px-6 md:px-16 py-16 md:py-20">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 sm:gap-8">
           <h2
             className="font-black text-black leading-tight"
             style={{ fontSize: "clamp(28px, 4.5vw, 60px)" }}
@@ -236,19 +538,16 @@ export default function Home() {
           </h2>
           <a
             href="mailto:francomendezok@gmail.com"
-            className="flex-shrink-0 rounded-full bg-[#3355FF] text-white font-medium text-sm flex items-center justify-center text-center leading-snug hover:bg-[#2244ee] transition-colors"
+            className="flex-shrink-0 rounded-full bg-[#3355FF] text-white font-medium text-sm flex items-center justify-center text-center leading-tight hover:bg-[#2244ee] transition-colors self-start sm:self-auto"
             style={{ width: "clamp(96px, 10vw, 140px)", height: "clamp(96px, 10vw, 140px)" }}
           >
-            {t("contact.cta").split("\n").map((line, index) => (
-              <span key={line}>
-                {index > 0 && <br />}
-                {line}
-              </span>
-            ))}
+            <span className="inline-flex max-w-[72px] items-center justify-center whitespace-pre-line text-center">
+              {t("contact.cta")}
+            </span>
           </a>
         </div>
         <hr className="my-8 border-gray-200" />
-        <div className="flex gap-12">
+        <div className="flex flex-wrap gap-6 sm:gap-12">
           <div>
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">{t("contact.emailLabel")}</p>
             <p className="text-sm text-gray-900">francomendezok@gmail.com</p>
@@ -264,25 +563,25 @@ export default function Home() {
               +549 351 393 0405
             </a>
           </div>
+          <div>
+            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">LinkedIn</p>
+            <a
+              href="https://www.linkedin.com/in/francomendezok/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-900 hover:opacity-60 transition-opacity"
+            >
+              linkedin.com/in/francomendezok
+            </a>
+          </div>
         </div>
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="bg-black px-8 md:px-16 pt-8 pb-10 overflow-hidden">
-        <div className="flex items-center justify-end mb-4">
-          <a
-            href="https://www.linkedin.com/in/francomendezok/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/40 hover:text-white hover:border-white/50 transition-colors text-base"
-            aria-label="LinkedIn"
-          >
-            ↗
-          </a>
-        </div>
+      <footer className="bg-black px-6 md:px-16 pt-8 pb-10 overflow-hidden">
         <h2
-          className="font-black text-white leading-none tracking-tight whitespace-nowrap"
-          style={{ fontSize: "clamp(44px, 11vw, 160px)" }}
+          className="font-black text-white leading-none tracking-tight"
+          style={{ fontSize: "clamp(36px, 11vw, 160px)" }}
         >
           Franco Mendez
         </h2>
