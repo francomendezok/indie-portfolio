@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "brand": "Franco · Full Stack Developer",
+    "work": "Work",
+    "skills": "Skills",
+    "contact": "Contact",
+    "language": "Language",
+    "english": "EN",
+    "spanish": "ES"
+  },
+  "hero": {
+    "title1": "Full Stack",
+    "title2": "Developer"
+  },
+  "bio": {
+    "description": "Driven by curiosity and a love for building, I create simple, functional, and visually striking digital products. As a solopreneur, I'm always shipping and exploring new ideas.",
+    "moreAbout": "More about me →",
+    "tagline": "My passion for design, development, and making things people actually use drives every project I take on. Based in Córdoba, Argentina."
+  },
+  "projects": {
+    "title": "Impressive Works",
+    "viewCaseStudy": "View case study →",
+    "sold": "Sold",
+    "interioresai": {
+      "description": "Redesign your interior with AI in seconds.",
+      "tag": "SaaS · AI"
+    },
+    "mirrorlook": {
+      "description": "Virtual try-on for Shopify stores.",
+      "tag": "Shopify · AI"
+    }
+  },
+  "skills": {
+    "title": "Skills that fuel my passion"
+  },
+  "contact": {
+    "eyebrow": "That's all for now.",
+    "titleLine1": "Got a project in mind?",
+    "titleLine2": "Let's talk",
+    "cta": "Get In\ntouch",
+    "emailLabel": "Email",
+    "whatsAppLabel": "WhatsApp"
+  },
+  "caseStudy": {
+    "back": "← Back",
+    "screenshot": "Screenshot",
+    "home": "Home",
+    "work": "Work"
+  },
+  "footer": {
+    "tagline": "your friendly chaos creator"
+  },
+  "dock": {
+    "home": "Home",
+    "work": "Work",
+    "skills": "Skills",
+    "profile": "About me",
+    "resume": "Resume",
+    "github": "GitHub",
+    "contact": "Contact"
+  },
+  "resumeModal": {
+    "eyebrow": "Resume",
+    "title": "Choose a language",
+    "description": "Download the PDF version in English or Spanish.",
+    "english": "English",
+    "spanish": "Spanish",
+    "close": "Close resume modal"
+  }
+}

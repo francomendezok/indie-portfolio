@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/app/i18n/LanguageContext";
+import { isLocale, LOCALE_COOKIE_NAME } from "@/app/i18n/config";
+import { FloatingDock } from "@/components/FloatingDock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,17 +24,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const cookieLocale = cookieStore.get(LOCALE_COOKIE_NAME)?.value;
+  const initialLocale = isLocale(cookieLocale) ? cookieLocale : "en";
+
   return (
-    <html lang="en">
+    <html lang={initialLocale}>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider initialLocale={initialLocale}>
+          {children}
+          <FloatingDock />
+        </LanguageProvider>
       </body>
     </html>
   );

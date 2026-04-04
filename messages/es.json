@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "brand": "Franco · Full Stack Developer",
+    "work": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "language": "Idioma",
+    "english": "EN",
+    "spanish": "ES"
+  },
+  "hero": {
+    "title1": "Full Stack",
+    "title2": "Developer"
+  },
+  "bio": {
+    "description": "Impulsado por la curiosidad y el amor por construir, creo productos digitales simples, funcionales y visualmente atractivos. Como solopreneur, siempre estoy lanzando y explorando nuevas ideas.",
+    "moreAbout": "Más sobre mí →",
+    "tagline": "Mi pasión por el diseño, el desarrollo y hacer cosas que la gente realmente usa impulsa cada proyecto que emprendo. Basado en Córdoba, Argentina."
+  },
+  "projects": {
+    "title": "Trabajos Destacados",
+    "viewCaseStudy": "Ver caso de estudio →",
+    "sold": "Vendido",
+    "interioresai": {
+      "description": "Rediseñá tu interior con IA en segundos.",
+      "tag": "SaaS · IA"
+    },
+    "mirrorlook": {
+      "description": "Probador virtual para tiendas Shopify.",
+      "tag": "Shopify · IA"
+    }
+  },
+  "skills": {
+    "title": "Habilidades que alimentan mi pasión"
+  },
+  "contact": {
+    "eyebrow": "Eso es todo por ahora.",
+    "titleLine1": "¿Tenés un proyecto en mente?",
+    "titleLine2": "Hablemos",
+    "cta": "Contactame",
+    "emailLabel": "Email",
+    "whatsAppLabel": "WhatsApp"
+  },
+  "caseStudy": {
+    "back": "← Volver",
+    "screenshot": "Captura",
+    "home": "Inicio",
+    "work": "Proyectos"
+  },
+  "footer": {
+    "tagline": "tu amigo creador del caos"
+  },
+  "dock": {
+    "home": "Inicio",
+    "work": "Proyectos",
+    "skills": "Habilidades",
+    "profile": "Sobre mí",
+    "resume": "CV",
+    "github": "GitHub",
+    "contact": "Contacto"
+  },
+  "resumeModal": {
+    "eyebrow": "Currículum",
+    "title": "Elegí un idioma",
+    "description": "Descargá la versión PDF en inglés o español.",
+    "english": "Inglés",
+    "spanish": "Español",
+    "close": "Cerrar modal de currículum"
+  }
+}

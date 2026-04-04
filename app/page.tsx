@@ -1,27 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-
-const projects = [
-  {
-    name: "Interiores AI",
-    description: "Redesign your interior with AI in seconds.",
-    image: "/interioresai1.webp",
-    logo: "/interioresai-logo.png",
-    link: "https://interiores-ai.com",
-    internalLink: "/interioresai",
-    tag: "SaaS · AI",
-    sold: true,
-  },
-  {
-    name: "Mirror Look App",
-    description: "Virtual try-on for Shopify stores.",
-    image: "/mirrorlook1.jpg",
-    logo: "/mirrorlook-logo.png",
-    link: "https://mirrorlook.app",
-    internalLink: "/mirrorlook",
-    tag: "Shopify · AI",
-  },
-];
+import { useLanguage } from "@/app/i18n/LanguageContext";
+import { MainNavbar } from "@/components/MainNavbar";
 
 const skills = [
   { name: "React / Next.js", icon: "⚛" },
@@ -39,27 +21,35 @@ const skills = [
 ];
 
 export default function Home() {
+  const { t } = useLanguage();
+  const projects = [
+    {
+      name: "Interiores AI",
+      description: t("projects.interioresai.description"),
+      image: "/interioresai1.webp",
+      logo: "/interioresai-logo.png",
+      link: "https://interiores-ai.com",
+      internalLink: "/interioresai",
+      tag: t("projects.interioresai.tag"),
+      sold: true,
+    },
+    {
+      name: "Mirror Look App",
+      description: t("projects.mirrorlook.description"),
+      image: "/mirrorlook1.jpg",
+      logo: "/mirrorlook-logo.png",
+      link: "https://mirrorlook.app",
+      internalLink: "/mirrorlook",
+      tag: t("projects.mirrorlook.tag"),
+    },
+  ];
+
   return (
     <div className="overflow-x-hidden font-sans">
       {/* ─── HERO ─── */}
       <section className="relative bg-[#0d0d0d] min-h-screen overflow-hidden">
         {/* Nav */}
-        <nav className="relative z-20 flex items-center justify-between px-8 md:px-16 py-6">
-          <span className="text-white/80 text-sm font-medium tracking-wide">
-            Franco · Solopreneur
-          </span>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#work" className="text-white/40 hover:text-white text-sm transition-colors">
-              Work
-            </a>
-            <a href="#skills" className="text-white/40 hover:text-white text-sm transition-colors">
-              Skills
-            </a>
-            <a href="#contact" className="text-white/40 hover:text-white text-sm transition-colors">
-              Contact
-            </a>
-          </div>
-        </nav>
+        <MainNavbar />
 
         {/* Person photo — right half */}
         <div className="absolute right-0 top-0 w-[55%] h-full">
@@ -67,6 +57,7 @@ export default function Home() {
             src="/me.webp"
             alt="Franco Mendez"
             fill
+            sizes="(max-width: 768px) 100vw, 55vw"
             className="object-cover object-top"
             priority
           />
@@ -81,13 +72,13 @@ export default function Home() {
             className="font-black text-white leading-[0.88] tracking-tight whitespace-nowrap"
             style={{ fontSize: "clamp(52px, 10.5vw, 148px)" }}
           >
-            Indie Developer &
+            {t("hero.title1")}
           </h1>
           <h1
             className="font-black text-white leading-[0.88] tracking-tight whitespace-nowrap"
             style={{ fontSize: "clamp(52px, 10.5vw, 148px)" }}
           >
-            Solopreneur
+            {t("hero.title2")}
           </h1>
         </div>
       </section>
@@ -97,34 +88,20 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-20 items-start">
           <div>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Driven by curiosity and a love for building, I create simple,
-              functional, and visually striking digital products. As a solopreneur,
-              I'm always shipping and exploring new ideas.
+              {t("bio.description")}
             </p>
             <a
               href="#contact"
               className="text-black font-medium text-sm hover:opacity-50 transition-opacity"
             >
-              More about me →
+              {t("bio.moreAbout")}
             </a>
           </div>
           <div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              My passion for design, development, and making things people actually
-              use drives every project I take on. Based in Córdoba, Argentina.
+              {t("bio.tagline")}
             </p>
             <div className="flex gap-5 mt-8">
-              <a
-                href="https://x.com/francomendezok"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-black transition-colors"
-                aria-label="X"
-              >
-                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
               <a
                 href="https://github.com/francomendezok"
                 target="_blank"
@@ -137,18 +114,14 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/francomendezok/"
+                href="https://www.linkedin.com/in/francomendezok/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-black transition-colors"
-                aria-label="Instagram"
+                aria-label="LinkedIn"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                  />
+                  <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1h.02C3.87 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.83v2.19h.05c.53-1 1.84-2.19 3.79-2.19 4.05 0 4.8 2.67 4.8 6.14V24h-4v-8.74c0-2.09-.04-4.78-2.91-4.78-2.91 0-3.36 2.27-3.36 4.63V24h-4V8z" />
                 </svg>
               </a>
             </div>
@@ -162,7 +135,7 @@ export default function Home() {
           className="font-black text-black leading-none mb-10"
           style={{ fontSize: "clamp(40px, 7.5vw, 96px)" }}
         >
-          Impressive Works
+          {t("projects.title")}
         </h2>
         <div className="grid md:grid-cols-2 gap-5">
           {projects.map((project) => (
@@ -176,14 +149,17 @@ export default function Home() {
                     src={project.image}
                     alt={project.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-5 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <img
+                    <Image
                       src={project.logo}
                       alt=""
+                      width={32}
+                      height={32}
                       className="w-8 h-8 rounded-lg object-cover flex-shrink-0"
                     />
                     <div>
@@ -196,7 +172,7 @@ export default function Home() {
                   <div className="flex items-center gap-2 flex-shrink-0 ml-4">
                     {project.sold && (
                       <span className="text-xs font-bold text-white bg-red-600 px-2 py-1 rounded uppercase tracking-wide">
-                        Sold
+                        {t("projects.sold")}
                       </span>
                     )}
                     <span className="text-white/30 text-xs border border-white/10 px-2 py-1 rounded whitespace-nowrap">
@@ -210,7 +186,7 @@ export default function Home() {
                   href={project.internalLink!}
                   className="text-white/30 text-xs hover:text-white/70 transition-colors"
                 >
-                  View case study →
+                  {t("projects.viewCaseStudy")}
                 </Link>
               </div>
             </div>
@@ -221,7 +197,7 @@ export default function Home() {
       {/* ─── SKILLS ─── */}
       <section id="skills" className="bg-[#111] px-8 md:px-16 py-20">
         <h2 className="text-white font-bold leading-tight mb-3" style={{ fontSize: "clamp(28px, 4vw, 48px)" }}>
-          Skills that fuel my passion
+          {t("skills.title")}
         </h2>
         <div className="flex gap-1.5 mb-12">
           {Array.from({ length: 6 }).map((_, i) => (
@@ -247,35 +223,38 @@ export default function Home() {
       {/* ─── CONTACT ─── */}
       <section id="contact" className="bg-white px-8 md:px-16 py-20">
         <p className="text-gray-400 text-sm font-medium mb-4 tracking-wide">
-          That&apos;s all for now.
+          {t("contact.eyebrow")}
         </p>
         <div className="flex items-start justify-between gap-8">
           <h2
             className="font-black text-black leading-tight"
             style={{ fontSize: "clamp(28px, 4.5vw, 60px)" }}
           >
-            Got a project in mind?
+            {t("contact.titleLine1")}
             <br />
-            Let&apos;s talk
+            {t("contact.titleLine2")}
           </h2>
           <a
             href="mailto:francomendezok@gmail.com"
             className="flex-shrink-0 rounded-full bg-[#3355FF] text-white font-medium text-sm flex items-center justify-center text-center leading-snug hover:bg-[#2244ee] transition-colors"
             style={{ width: "clamp(96px, 10vw, 140px)", height: "clamp(96px, 10vw, 140px)" }}
           >
-            Get In
-            <br />
-            touch
+            {t("contact.cta").split("\n").map((line, index) => (
+              <span key={line}>
+                {index > 0 && <br />}
+                {line}
+              </span>
+            ))}
           </a>
         </div>
         <hr className="my-8 border-gray-200" />
         <div className="flex gap-12">
           <div>
-            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Email</p>
+            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">{t("contact.emailLabel")}</p>
             <p className="text-sm text-gray-900">francomendezok@gmail.com</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">WhatsApp</p>
+            <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">{t("contact.whatsAppLabel")}</p>
             <a
               href="https://wa.me/5493513930405"
               target="_blank"
@@ -290,13 +269,13 @@ export default function Home() {
 
       {/* ─── FOOTER ─── */}
       <footer className="bg-black px-8 md:px-16 pt-8 pb-10 overflow-hidden">
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-white/30 text-sm">your friendly chaos creator</p>
+        <div className="flex items-center justify-end mb-4">
           <a
-            href="https://x.com/francomendezok"
+            href="https://www.linkedin.com/in/francomendezok/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/40 hover:text-white hover:border-white/50 transition-colors text-base"
+            aria-label="LinkedIn"
           >
             ↗
           </a>

@@ -26,7 +26,7 @@ export const ProjectCard = ({ name, description, revenue, logo, link, internalLi
                     <div className="flex items-center gap-3">
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden ${!isImageLogo ? 'text-xl text-white font-bold' : ''}`} style={!isImageLogo ? { backgroundColor: color } : {}}>
                             {isImageLogo ? (
-                                <img src={logo} alt={name} className="w-full h-full object-cover" />
+                                <Image src={logo} alt={name} width={48} height={48} className="w-full h-full object-cover" />
                             ) : (
                                 logo
                             )}

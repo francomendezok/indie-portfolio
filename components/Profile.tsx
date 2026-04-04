@@ -7,7 +7,13 @@ export const Profile = () => {
             {/* Avatar Container */}
             <div className="relative mb-6 group">
                 <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white bg-gray-100">
-                    <Image src="/me.webp" alt="Profile" fill className="object-cover" />
+                    <Image
+                        src="/me.webp"
+                        alt="Profile"
+                        fill
+                        sizes="128px"
+                        className="object-cover"
+                    />
                 </div>
             </div>
 
