@@ -12,14 +12,14 @@ export default function MirrorLookPage() {
     const project = {
         name: "Mirror Look App",
         description: t("projects.mirrorlook.description"),
-        logo: "/mirrorlook-logo.png",
+        logo: "/mirrorlook-logo.webp",
         link: "https://mirrorlook.app"
     };
 
     const images = [
-        "/mirrorlook1.jpg",
-        "/mirrorlook2.jpg",
-        "/mirrorlook3.png",
+        "/1.webp",
+        "/2.webp",
+        "/3.webp",
     ];
 
     return (

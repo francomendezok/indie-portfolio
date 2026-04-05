@@ -23,6 +23,7 @@ export default function InterioresAiPage() {
         "/interioresai3.webp",
         "/interioresai4.webp",
         "/interioresai5.webp",
+        "/interioresai6.webp",
     ];
 
     return (
