@@ -377,6 +377,7 @@ export default function Home() {
                           height={1200}
                           sizes="100vw"
                           className="h-auto w-full object-cover"
+                          priority={project.featuredImage === "/mirrorlook.png"}
                         />
                       </div>
                       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">

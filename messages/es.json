@@ -13,25 +13,31 @@
     "title2": "Developer"
   },
   "bio": {
-    "description": "Impulsado por la curiosidad y el amor por construir, creo productos digitales simples, funcionales y visualmente atractivos. Como solopreneur, siempre estoy lanzando y explorando nuevas ideas.",
+    "description": "Como desarrollador full stack, construyo productos digitales sólidos, escalables y bien pensados, combinando frontend, backend, bases de datos e integraciones para resolver problemas reales con foco técnico.",
     "moreAbout": "Más sobre mí →",
-    "tagline": "Mi pasión por el diseño, el desarrollo y hacer cosas que la gente realmente usa impulsa cada proyecto que emprendo. Basado en Córdoba, Argentina."
+    "tagline": "Me enfoco en arquitectura, performance, experiencia de usuario e implementación end-to-end para construir software útil, mantenible y listo para producción. Basado en Córdoba, Argentina."
   },
   "projects": {
-    "title": "Trabajos Destacados",
+    "title": "Mis Últimos Proyectos",
     "viewCaseStudy": "Ver caso de estudio →",
+    "liveSite": "Abrir sitio",
+    "gallery": "Galería",
     "sold": "Vendido",
     "interioresai": {
       "description": "Rediseñá tu interior con IA en segundos.",
       "tag": "SaaS · IA"
     },
+    "autogestioncmpc": {
+      "description": "Plataforma de autogestión para más de 22.000 médicos en Córdoba, Argentina, con pagos y gestión de documentos integrados.",
+      "tag": "Enterprise · Herramientas Internas"
+    },
     "mirrorlook": {
-      "description": "Probador virtual para tiendas Shopify.",
-      "tag": "Shopify · IA"
+      "description": "Disponible en 8 plataformas ecommerce: Shopify, Tiendanube, Wix, WooCommerce, Ecwid, VTEX, BigCommerce y Squarespace.",
+      "tag": "Probador Virtual con IA"
     }
   },
   "skills": {
-    "title": "Habilidades que alimentan mi pasión"
+    "title": "Tecnologias"
   },
   "contact": {
     "eyebrow": "Eso es todo por ahora.",

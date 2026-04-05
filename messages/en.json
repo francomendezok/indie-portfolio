@@ -18,16 +18,22 @@
     "tagline": "My passion for design, development, and making things people actually use drives every project I take on. Based in Córdoba, Argentina."
   },
   "projects": {
-    "title": "Impressive Works",
+    "title": "My Latest Projects",
     "viewCaseStudy": "View case study →",
+    "liveSite": "Open site",
+    "gallery": "Gallery",
     "sold": "Sold",
     "interioresai": {
       "description": "Redesign your interior with AI in seconds.",
       "tag": "SaaS · AI"
     },
+    "autogestioncmpc": {
+      "description": "Autogestion platform for more than 22,000 doctors in Cordoba, Argentina, with integrated payments and document management.",
+      "tag": "Enterprise · Internal Tools"
+    },
     "mirrorlook": {
-      "description": "Virtual try-on for Shopify stores.",
-      "tag": "Shopify · AI"
+      "description": "Available across 8 ecommerce platforms: Shopify, Tiendanube, Wix, WooCommerce, Ecwid, VTEX, BigCommerce, and Squarespace.",
+      "tag": "AI Virtual Try-On"
     }
   },
   "skills": {
