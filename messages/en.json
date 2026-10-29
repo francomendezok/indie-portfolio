@@ -18,6 +18,10 @@
     "tagline": "My passion for design, development, and making things people actually use drives every project I take on. Based in Córdoba, Argentina."
   },
   "projects": {
+    "glimora": {
+      "description": "AI beauty app for iOS and Android: makeup try-on from a selfie, color season analysis, and product scanning that flags harmful ingredients via the INCI Beauty API. Built solo with React Native and Expo, published on the App Store and Google Play, localized into 30+ languages.",
+      "tag": "Mobile App · AI"
+    },
     "title": "My Latest Projects",
     "viewCaseStudy": "View case study →",
     "liveSite": "Open site",

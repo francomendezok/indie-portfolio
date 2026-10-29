@@ -136,11 +136,34 @@ const skills = [
     iconUrls: ["https://icon.icepanel.io/Technology/svg/WooCommerce.svg"],
   },
   { name: "React Native", icon: "RN" },
+  { name: "Expo", icon: "EX" },
+  { name: "Supabase", icon: "SB" },
 ];
 
 export default function Home() {
   const { t, locale } = useLanguage();
   const projects = [
+    {
+      name: "Glimora",
+      description: t("projects.glimora.description"),
+      logo: "/glimora-logo.webp",
+      tag: t("projects.glimora.tag"),
+      logoClassName: "rounded-2xl object-cover",
+      banner: "/glimora/screen-1.webp",
+      phoneScreens: true,
+      video: "/glimora/tryon.mp4",
+      videoPoster: "/glimora/tryon-poster.webp",
+      gallery: [
+        "/glimora/screen-2.webp",
+        "/glimora/screen-3.webp",
+        "/glimora/screen-4.webp",
+        "/glimora/screen-5.webp",
+        "/glimora/screen-6.webp",
+        "/glimora/screen-7.webp",
+        "/glimora/screen-8.webp",
+        "/glimora/screen-9.webp",
+      ],
+    },
     {
       name: "Autogestion CMPC",
       description: t("projects.autogestioncmpc.description"),
@@ -160,7 +183,6 @@ export default function Home() {
       name: "MirrorLook AI Virtual Try-On",
       description: t("projects.mirrorlook.description"),
       logo: "/mirrorlook-logo.webp",
-      link: "https://mirrorlook.app",
       tag: t("projects.mirrorlook.tag"),
       logoClassName: "rounded-2xl object-contain",
       banner: "/mirrorlook.png",
@@ -171,7 +193,6 @@ export default function Home() {
       name: "Interiores AI",
       description: t("projects.interioresai.description"),
       logo: "/interioresai-logo.png",
-      link: "https://interiores-ai.com",
       tag: t("projects.interioresai.tag"),
       sold: true,
       banner: "/interiores-ai-1.png",
@@ -196,7 +217,7 @@ export default function Home() {
         const next = { ...current };
 
         for (const project of projects) {
-          if (project.featuredImage) continue;
+          if (project.featuredImage || project.phoneScreens) continue;
           const slides = [project.banner, ...project.gallery];
           if (!slides.length) continue;
           const currentIndex = current[project.name] ?? 0;
@@ -334,22 +355,24 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <span className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/70">
                       {project.tag}
                     </span>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition-opacity hover:opacity-80"
-                    >
-                      {t("projects.liveSite")}
-                    </a>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition-opacity hover:opacity-80"
+                      >
+                        {t("projects.liveSite")}
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                {project.video && (
+                {project.video && !project.phoneScreens && (
                   <div className="overflow-hidden md:rounded-3xl border border-white/10 bg-black">
                     <video
                       className="block h-auto w-full"
@@ -367,7 +390,40 @@ export default function Home() {
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
                     {t("projects.gallery")}
                   </p>
-                  {project.featuredImage ? (
+                  {project.phoneScreens ? (
+                    <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-5 md:overflow-visible md:px-0">
+                      {project.video && (
+                        <div className="w-[62%] flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-white/10 bg-black sm:w-[38%] md:w-auto">
+                          <video
+                            className="block h-auto w-full"
+                            poster={project.videoPoster}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                          >
+                            <source src={project.video} type="video/mp4" />
+                          </video>
+                        </div>
+                      )}
+                      {[project.banner, ...project.gallery].map((image, index) => (
+                        <div
+                          key={`${project.name}-${image}`}
+                          className="w-[62%] flex-shrink-0 snap-center overflow-hidden rounded-2xl border border-white/10 bg-black/30 sm:w-[38%] md:w-auto"
+                        >
+                          <Image
+                            src={image}
+                            alt={`${project.name} ${index + 1}`}
+                            width={620}
+                            height={1342}
+                            sizes="(max-width: 640px) 62vw, (max-width: 768px) 38vw, 20vw"
+                            className="h-auto w-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : project.featuredImage ? (
                     <div className="space-y-4">
                       <div className="overflow-hidden md:rounded-3xl border border-white/10 bg-black/30">
                         <Image

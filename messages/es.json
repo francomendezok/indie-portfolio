@@ -18,6 +18,10 @@
     "tagline": "Me enfoco en arquitectura, performance, experiencia de usuario e implementación end-to-end para construir software útil, mantenible y listo para producción. Basado en Córdoba, Argentina."
   },
   "projects": {
+    "glimora": {
+      "description": "App de belleza con IA para iOS y Android: prueba de maquillaje desde una selfie, análisis de color y escaneo de productos que detecta ingredientes tóxicos con la API de INCI Beauty. Desarrollada en solitario con React Native y Expo, publicada en App Store y Google Play, traducida a más de 30 idiomas.",
+      "tag": "App Mobile · IA"
+    },
     "title": "Mis Últimos Proyectos",
     "viewCaseStudy": "Ver caso de estudio →",
     "liveSite": "Abrir sitio",
