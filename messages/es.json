@@ -19,7 +19,7 @@
   },
   "projects": {
     "glimora": {
-      "description": "App de belleza con IA para iOS y Android: prueba de maquillaje desde una selfie, análisis de color y escaneo de productos que detecta ingredientes tóxicos con la API de INCI Beauty. Desarrollada en solitario con React Native y Expo, publicada en App Store y Google Play, traducida a más de 30 idiomas.",
+      "description": "App de belleza con IA para iOS y Android: prueba de maquillaje desde una selfie, análisis de color y escaneo de productos que detecta ingredientes tóxicos con INCI API. Desarrollada en solitario con React Native y Expo, publicada en App Store y Google Play, traducida a más de 30 idiomas.",
       "tag": "App Mobile · IA"
     },
     "title": "Mis Últimos Proyectos",
