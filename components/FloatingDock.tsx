@@ -227,7 +227,7 @@ export function FloatingDock() {
               >
                 {isProfile ? (
                   <Image
-                    src="/me.webp"
+                    src="/profile.webp"
                     alt="Franco"
                     width={44}
                     height={44}

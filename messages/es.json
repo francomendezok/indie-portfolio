@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "Franco · Full Stack Developer",
+    "brand": "Franco · Entrepreneur",
     "work": "Proyectos",
     "skills": "Habilidades",
     "contact": "Contacto",
@@ -9,8 +9,7 @@
     "spanish": "ES"
   },
   "hero": {
-    "title1": "Full Stack",
-    "title2": "Developer"
+    "title": "Entrepreneur"
   },
   "bio": {
     "description": "Como desarrollador full stack, construyo productos digitales sólidos, escalables y bien pensados, combinando frontend, backend, bases de datos e integraciones para resolver problemas reales con foco técnico.",

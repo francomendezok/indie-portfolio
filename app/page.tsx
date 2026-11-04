@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/i18n/LanguageContext";
 import { MainNavbar } from "@/components/MainNavbar";
+import { FooterSocials } from "@/components/FooterSocials";
 
 const skills = [
   {
@@ -241,7 +242,7 @@ export default function Home() {
         {/* Person photo — full width on mobile, right half on desktop */}
         <div className="absolute right-0 top-0 w-full md:w-[55%] h-full">
           <Image
-            src="/me.webp"
+            src="/profile.webp"
             alt="Franco Mendez"
             fill
             sizes="(max-width: 768px) 100vw, 55vw"
@@ -260,13 +261,7 @@ export default function Home() {
             className="font-black text-white leading-[0.88] tracking-tight md:whitespace-nowrap"
             style={{ fontSize: "clamp(42px, 10.5vw, 148px)" }}
           >
-            {t("hero.title1")}
-          </h1>
-          <h1
-            className="font-black text-white leading-[0.88] tracking-tight md:whitespace-nowrap"
-            style={{ fontSize: "clamp(42px, 10.5vw, 148px)" }}
-          >
-            {t("hero.title2")}
+            {t("hero.title")}
           </h1>
         </div>
       </section>
@@ -302,7 +297,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/francomendezok/"
+                href="https://www.linkedin.com/in/francomendezcreator/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-black transition-colors"
@@ -623,12 +618,12 @@ export default function Home() {
           <div>
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">LinkedIn</p>
             <a
-              href="https://www.linkedin.com/in/francomendezok/"
+              href="https://www.linkedin.com/in/francomendezcreator/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gray-900 hover:opacity-60 transition-opacity"
             >
-              linkedin.com/in/francomendezok
+              linkedin.com/in/francomendezcreator
             </a>
           </div>
         </div>
@@ -642,6 +637,9 @@ export default function Home() {
         >
           Franco Mendez
         </h2>
+        <div className="mt-8">
+          <FooterSocials />
+        </div>
       </footer>
     </div>
   );

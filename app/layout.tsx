@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Franco Mendez | Full Stack Developer",
+  title: "Franco Mendez | Entrepreneur",
   description: "25 years old from Argentina",
   icons: {
     icon: "/favicon/favicon.ico",

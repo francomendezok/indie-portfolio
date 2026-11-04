@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "Franco · Full Stack Developer",
+    "brand": "Franco · Entrepreneur",
     "work": "Work",
     "skills": "Skills",
     "contact": "Contact",
@@ -9,8 +9,7 @@
     "spanish": "ES"
   },
   "hero": {
-    "title1": "Full Stack",
-    "title2": "Developer"
+    "title": "Entrepreneur"
   },
   "bio": {
     "description": "Driven by curiosity and a love for building, I create simple, functional, and visually striking digital products. As a solopreneur, I'm always shipping and exploring new ideas.",
