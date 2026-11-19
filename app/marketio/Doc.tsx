@@ -10,6 +10,10 @@ export function Doc({ title, updated, children }: { title: string; updated: stri
                     <Link href="/marketio/privacy">Privacy Policy</Link>
                     <Link href="/marketio/terms">Terms of Service</Link>
                 </nav>
+                <a href="https://www.youtube.com" aria-label="YouTube" className="!no-underline inline-block">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/developed-with-youtube.png" alt="Developed with YouTube" width={210} height={75} className="-ml-4" />
+                </a>
                 <h1 className="text-3xl font-semibold text-gray-900">{title}</h1>
                 <p className="text-sm text-gray-400">Last updated: {updated}</p>
                 {children}
